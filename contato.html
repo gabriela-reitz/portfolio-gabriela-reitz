@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contato | Gabriela Reitz</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">✧ ˚₊♡ GABRIELA REITZ ♡₊˚ ✧</a>
+
+    <nav aria-label="Menu principal">
+      <a href="index.html">Sobre </a>
+      <a href="formacao.html">Formação</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="contato.html" aria-current="page">Contato</a>
+    </nav>
+  </header>
+
+  <main class="pagina-contato">
+    <section class="quadro-contato" aria-labelledby="titulo-contato">
+      <h1 id="titulo-contato">✧ ˚₊♡ Contato ♡₊˚ ✧</h1>
+
+      <div class="conteudo-contato">
+        <div class="dados-contato">
+          
+
+          <ul class="links-contato">
+            <li>
+              <strong>Nome:</strong>
+              Gabriela Reitz
+            </li>
+
+            <li>
+              <strong>E-mail:</strong>
+              <a href="mailto:gaiagaiagaia@tuta.io">
+                gaiagaiagaia@tuta.io
+              </a>
+            </li>
+
+            <li>
+              <strong>LinkedIn:</strong>
+              <a
+                href="https://www.linkedin.com/in/gabriela-reitz-/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Meu perfil no LinkedIn ↗
+              </a>
+            </li>
+
+            <li>
+              <strong>GitHub:</strong>
+              <a
+                href="https://github.com/gabriela-reitz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Meus projetos no GitHub ↗
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- A validação e a simulação são realizadas no script.js -->
+        <form id="form-contato" class="formulario-contato" novalidate>
+          
+
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Seu nome"
+            autocomplete="name"
+            required
+          >
+
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seuemail@exemplo.com"
+            autocomplete="email"
+            required
+          >
+
+          <label for="mensagem">Mensagem</label>
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            rows="6"
+            placeholder="Escreva sua mensagem..."
+            required
+          ></textarea>
+
+          <button type="submit">♡ ENVIAR ♡</button>
+
+          <!-- Exibe o resultado e anuncia a mensagem para leitores de tela -->
+          <p
+            id="retorno-contato"
+            class="retorno-contato"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Gabriela Reitz ♡</p>
+  </footer>
+</body>
+</html>

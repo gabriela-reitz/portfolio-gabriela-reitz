@@ -1,0 +1,585 @@
+/* CORES DO SITE
+   Os nomes abaixo permitem trocar as cores em um só lugar. */
+:root {
+  --fundo: #140e19;
+  --janela: #211526;
+  --rosa: #f3a6d2;
+  --lilas: #c7b0e8;
+  --texto: #f7edf5;
+  --sombra: #08060c;
+  --erro: #ffb4b4;
+  --sucesso: #b9efc6;
+}
+
+/* Faz o tamanho dos elementos incluir a borda e o espaço interno. */
+* {
+  box-sizing: border-box;
+}
+
+/* Define a aparência geral de todas as páginas. */
+body {
+  margin: 0;
+  color: var(--texto);
+  background-color: var(--fundo);
+  font-family: "Courier New", monospace;
+  line-height: 1.6;
+  text-align: center;
+
+  /* Desenha uma grade discreta no fundo. */
+  background-image:
+    linear-gradient(#f3a6d208 1px, transparent 1px),
+    linear-gradient(90deg, #f3a6d208 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Define a cor dos links. */
+a {
+  color: var(--rosa);
+  text-underline-offset: 4px;
+}
+
+/* Muda a cor quando o mouse passa pelo link. */
+a:hover {
+  color: var(--lilas);
+}
+
+/* Destaca os elementos quando a pessoa navega com a tecla Tab. */
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--lilas);
+  outline-offset: 4px;
+}
+
+/* Evita que imagens ultrapassem a largura disponível. */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajusta os títulos. */
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  color: var(--rosa);
+  font-size: clamp(28px, 5vw, 48px);
+}
+
+h3 {
+  margin-top: 0;
+  color: var(--rosa);
+}
+
+/* Deixa uma linha discreta entre as certificações. */
+hr {
+  margin: 24px 0;
+  border: 0;
+  border-top: 1px solid var(--lilas);
+}
+
+/* CABEÇALHO E MENU */
+
+/* Mantém o cabeçalho no alto da tela durante a rolagem. */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  padding: 24px 20px;
+  background-color: var(--fundo);
+  border-bottom: 2px solid var(--rosa);
+}
+
+/* Nome ou coração que aparece acima do menu. */
+header > a {
+  max-width: 100%;
+  color: var(--rosa);
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+/* Coloca os links lado a lado e permite que quebrem a linha. */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+/* Destaca o link ao passar o mouse e o da página aberta. */
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--rosa);
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+/* CONTEÚDO DAS PÁGINAS */
+
+/* Limita a largura e centraliza o conteúdo. */
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Aparência dos quadros principais. */
+section {
+  margin-bottom: 36px;
+  padding: 26px;
+  background-color: var(--janela);
+  border: 2px solid var(--rosa);
+  border-radius: 6px;
+  box-shadow: 5px 5px 0 var(--sombra);
+}
+
+/* Barra colorida dos títulos das seções. */
+section > h2 {
+  margin: -26px -26px 24px;
+  padding: 12px 18px;
+  color: var(--fundo);
+  background: linear-gradient(90deg, var(--rosa), var(--lilas));
+  font-size: 22px;
+}
+
+/* Cartões usados para apresentar cursos e certificações. */
+article {
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid var(--lilas);
+  border-radius: 5px;
+}
+
+article p {
+  margin: 12px 0 0;
+}
+
+/* Nome que aparece no final das páginas. */
+footer {
+  padding: 20px;
+  color: var(--rosa);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* PÁGINA SOBRE MIM */
+
+/* Coloca a apresentação e a imagem uma abaixo da outra. */
+#inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 20px;
+}
+
+.apresentacao {
+  width: 100%;
+  max-width: 700px;
+}
+
+.apresentacao h1 {
+  margin: 0 0 16px;
+}
+
+.apresentacao p {
+  margin: 0;
+  color: var(--lilas);
+}
+
+/* Moldura da imagem de abertura. */
+.janela-imagem {
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  border: 2px solid var(--rosa);
+  border-radius: 6px;
+  box-shadow: 5px 5px 0 var(--sombra);
+}
+
+/* Barra decorativa acima da imagem. */
+.barra-janela {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  color: var(--fundo);
+  background: linear-gradient(90deg, var(--rosa), var(--lilas));
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.janela-imagem img {
+  width: 100%;
+}
+
+/* Quadro que contém seu texto de apresentação. */
+#sobre {
+  width: 100%;
+  max-width: 750px;
+  margin: 35px auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Mantém o computador ao lado do texto. */
+.conteudo-sobre {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  text-align: left;
+}
+
+.icone-sobre {
+  flex: 0 0 100px;
+  font-size: 55px;
+  text-align: center;
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+.conteudo-sobre p {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* Faz o computador subir, descer e inclinar levemente. */
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+/* PÁGINA FORMAÇÃO */
+
+.pagina-formacao {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+/* PÁGINA PORTFÓLIO */
+
+.pagina-portfolio {
+  max-width: 1000px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Barra com o título Portfólio. */
+.portfolio-intro {
+  margin-bottom: 25px;
+  padding: 15px 20px;
+  color: var(--fundo);
+  background: linear-gradient(90deg, var(--rosa), var(--lilas));
+}
+
+.portfolio-intro h1 {
+  margin: 0;
+  color: var(--fundo);
+  font-size: clamp(20px, 3vw, 28px);
+}
+
+.portfolio-intro p {
+  margin: 10px 0 0;
+}
+
+/* Quadro de cada projeto. */
+.portfolio-projeto {
+  margin: 0 0 24px;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--janela);
+  border: 2px solid var(--rosa);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 var(--sombra);
+}
+
+/* Espaço ao redor da foto do projeto. */
+.portfolio-foto {
+  margin: 0;
+  padding: 20px 20px 0;
+}
+
+.portfolio-foto img {
+  width: 100%;
+  border: 1px solid var(--rosa);
+  border-radius: 5px;
+}
+
+/* Texto e link que explicam o projeto. */
+.portfolio-descricao {
+  padding: 24px;
+  text-align: left;
+}
+
+.portfolio-descricao h3 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.portfolio-descricao p {
+  margin: 0 0 16px;
+  overflow-wrap: break-word;
+}
+
+/* BOTÕES QUE LEVAM PARA OUTRAS PÁGINAS */
+
+/* Organiza os links no final de Formação e Portfólio. */
+.acoes-formacao,
+.portfolio-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+/* Deixa esses links com aparência de botão. */
+.acoes-formacao a,
+.portfolio-links a {
+  display: inline-block;
+  padding: 12px 20px;
+  color: var(--fundo);
+  background-color: var(--rosa);
+  border: 2px solid var(--rosa);
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.acoes-formacao a:hover,
+.portfolio-links a:hover {
+  background-color: var(--lilas);
+}
+
+/* PÁGINA CONTATO */
+
+.quadro-contato {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Barra colorida com o título Contato. */
+.quadro-contato > h1 {
+  margin: 0;
+  padding: 15px 20px;
+  color: var(--fundo);
+  background: linear-gradient(90deg, var(--rosa), var(--lilas));
+  font-size: clamp(22px, 4vw, 28px);
+}
+
+/* Divide os dados e o formulário em duas colunas. */
+.conteudo-contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  padding: 30px;
+  text-align: left;
+}
+
+/* Permite que as colunas caibam em telas menores. */
+.dados-contato,
+.formulario-contato {
+  min-width: 0;
+}
+
+/* Lista com nome, e-mail e redes sociais. */
+.links-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links-contato li {
+  overflow-wrap: anywhere;
+}
+
+.links-contato strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--rosa);
+}
+
+.links-contato a {
+  color: var(--texto);
+}
+
+.links-contato a:hover {
+  color: var(--rosa);
+}
+
+/* Coloca os campos do formulário um abaixo do outro. */
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contato label {
+  margin-bottom: 6px;
+  color: var(--rosa);
+  font-weight: bold;
+}
+
+/* Aparência dos campos onde a pessoa escreve. */
+.formulario-contato input,
+.formulario-contato textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px;
+  color: var(--texto);
+  background-color: var(--fundo);
+  border: 1px solid var(--lilas);
+  border-radius: 5px;
+  font: inherit;
+  font-size: 16px;
+}
+
+/* Permite aumentar a altura da mensagem. */
+.formulario-contato textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Cor dos exemplos que aparecem dentro dos campos. */
+.formulario-contato input::placeholder,
+.formulario-contato textarea::placeholder {
+  color: #c9b6ca;
+}
+
+/* Aparência do botão Enviar. */
+.formulario-contato button {
+  padding: 12px 20px;
+  color: var(--fundo);
+  background-color: var(--rosa);
+  border: 2px solid var(--rosa);
+  border-radius: 5px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.formulario-contato button:hover {
+  background-color: var(--lilas);
+}
+
+/* Mensagem que o JavaScript mostra após verificar o formulário. */
+.retorno-contato {
+  margin: 16px 0 0;
+}
+
+/* Esconde o espaço da mensagem enquanto ela estiver vazia. */
+.retorno-contato:empty {
+  display: none;
+}
+
+.retorno-contato.erro {
+  color: var(--erro);
+}
+
+.retorno-contato.sucesso {
+  color: var(--sucesso);
+}
+
+/* AJUSTES PARA CELULARES */
+
+/* Estas regras funcionam quando a tela tem até 700 pixels. */
+@media (max-width: 700px) {
+  header {
+    gap: 12px;
+    padding: 18px 16px;
+  }
+
+  header > a {
+    font-size: 20px;
+  }
+
+  nav {
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  /* Coloca o formulário abaixo dos dados de contato. */
+  .conteudo-contato {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+}
+
+/* Ajustes para telas ainda menores. */
+@media (max-width: 520px) {
+  /* Coloca o computador acima do texto. */
+  .conteudo-sobre {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .icone-sobre {
+    flex-basis: auto;
+    font-size: 45px;
+  }
+
+  .conteudo-sobre p {
+    font-size: 15px;
+  }
+
+  .portfolio-foto {
+    padding: 12px 12px 0;
+  }
+
+  .portfolio-descricao {
+    padding: 18px;
+  }
+
+  .portfolio-descricao h3 {
+    font-size: 20px;
+  }
+}
+
+/* Desliga os movimentos se a pessoa tiver escolhido
+   reduzir animações nas configurações do aparelho. */
+@media (prefers-reduced-motion: reduce) {
+  .icone-sobre {
+    animation: none;
+  }
+
+  .acoes-formacao a,
+  .portfolio-links a,
+  .formulario-contato button {
+    transition: none;
+  }
+}
